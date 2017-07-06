@@ -22,6 +22,11 @@ Running
         -p 80:80 \
         -v /opt/ejudge:/home/ejudge
         ejudge
+		
+Installation check
+==================
+You can check ejudge here http://localhost/cgi-bin/serve-control
+Login and password are `ejudge:ejudge`.
 
 License
 =======

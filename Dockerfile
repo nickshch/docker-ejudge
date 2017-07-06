@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:9
 
 MAINTAINER Alexey Nurgaliev <atnurgaliev@gmail.com>
 
@@ -25,7 +25,9 @@ RUN cd /home &&\
                        mono-devel mono-runtime mono-vbnc php7.0-cli perl \
                        ruby python python3 gccgo &&\
     \
-    locale-gen en_US.UTF-8 ru_RU.UTF-8 &&\
+	sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen &&\
+	sed -i 's/^# *\(ru_RU.UTF-8\)/\1/' /etc/locale.gen &&\
+	/usr/sbin/locale-gen &&\
     wget -O freebasic.tar.gz "${URL_FREEBASIC}" &&\
     mkdir /opt/freebasic &&\
     tar -xvf freebasic.tar.gz -C /opt/freebasic --strip-components 1 &&\
