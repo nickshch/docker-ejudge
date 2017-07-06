@@ -25,7 +25,9 @@ Running
 		
 Installation check
 ==================
+
 You can check ejudge here http://localhost/cgi-bin/serve-control
+
 Login and password are `ejudge:ejudge`.
 
 License
