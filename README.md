@@ -7,6 +7,8 @@ System login and password are `ejudge:ejudge`.
 
 Data stored in `/home/ejudge`
 
+Image without external volume for ejudge contests.
+
 **There are issues with running PHP, Ruby and Go solutions.**
 
 Building
@@ -19,8 +21,7 @@ Running
 
     $ docker run -d \
         --name ejudge \
-        -p 80:80 \
-        -v /opt/ejudge:/home/ejudge
+        -p 80:80
         ejudge
 		
 Installation check

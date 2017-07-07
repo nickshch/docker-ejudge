@@ -65,6 +65,4 @@ ADD scripts /opt/scripts
 
 EXPOSE 80
 
-VOLUME /home/ejudge
-
 CMD ["/bin/bash", "/opt/scripts/run.sh"]
