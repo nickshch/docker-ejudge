@@ -1,0 +1,26 @@
+apt-get install libnss-ldap
+
+-/etc/libnss-ldap.conf
+base dc=bmstu,dc=cloud
+uri ldap://ldap.bmstu.cloud/
+ldap_version 3
+rootbinddn cn=admin,dc=bmstu,dc=cloud
+
+echo -n "mypassword" > /etc/libnss-ldap.secret
+chmod 600 /etc/libnss-ldap.secret
+
+-/etc/nsswitch.conf
+passwd:         files ldap
+group:          files ldap
+shadow:         files ldap
+gshadow:        files
+
+hosts:          files dns ldap
+networks:       files ldap
+
+protocols:      db files
+services:       db files
+ethers:         db files
+rpc:            db files
+
+netgroup:       nis
